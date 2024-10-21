@@ -12,6 +12,10 @@ function Drawing() {
         this.shapes.push(toAdd);
     }
 
+    this.removeShapes = function (toRemove) {
+        this.shapes.splice(this.shapes.indexOf(toRemove), 1);
+    }
+
     this.paint = function(ctx) {
         console.log(this.shapes);
         ctx.fillStyle = '#F0F0F0'; // set canvas' background color

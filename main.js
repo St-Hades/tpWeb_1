@@ -6,6 +6,9 @@ var width = document.getElementById('spinnerWidth');
 var rectangle = document.getElementById('butRect');
 var line = document.getElementById('butLine');
 
+// main.js
+
+
 canvas.width=800
 canvas.height=600
 
@@ -43,5 +46,17 @@ rectangle.addEventListener('click', function() {
 line.addEventListener('click', function() {
     pencil.setCurrEditingMode(editingMode.line);
 });
+
+shapeList.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        let id = parseInt(event.target.id.split('-')[1]);
+        console.log('Button ' + id + ' clicked');
+        drawing.removeShapes(formList[id]);
+        shapeList.removeChild(document.getElementById("btn-" + id));
+        shapeList.removeChild(document.getElementById("li-" + id));
+        drawing.paint(ctx, canvas);
+    }
+});
+
 
 

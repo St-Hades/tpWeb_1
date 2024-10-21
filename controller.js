@@ -1,6 +1,8 @@
 
 var editingMode = { rect: 0, line: 1 };
 
+
+
 function Pencil(ctx, drawing, canvas) {
 	this.currEditingMode = editingMode.line;
 	this.currLineWidth = 5;
@@ -37,17 +39,20 @@ function Pencil(ctx, drawing, canvas) {
 
 	this.onInteractionUpdate = function (positions) {
 		if (this.currEditingMode === editingMode.rect) {
-			this.currentShape.largeur = Math.abs(positions.xFinal - positions.xInit);
-			this.currentShape.hauteur = Math.abs(positions.yFinal - positions.yInit);
+			this.currentShape.largeur = positions.xFinal - positions.xInit;
+			this.currentShape.hauteur = positions.yFinal - positions.yInit;
 		} else {
 			this.currentShape.xD = positions.xFinal;
 			this.currentShape.yD = positions.yFinal;
 		}
+		drawing.paint(ctx)
+		this.currentShape.paint(ctx)
 	}
 
 	this.onInteractionEnd = function (positions) {
 		drawing.addShapes(this.currentShape);
 		drawing.paint(ctx);
+		updateShapeList(this.currentShape);
 	}
 
 };
