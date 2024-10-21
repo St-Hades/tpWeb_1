@@ -7,7 +7,9 @@ Plus précisément, l'utilisateur peut dessiner des formes géométriques (recta
 
 ## Installation :
 
-```git clone https://github.com/St-Hades/tpWeb_1.git```
+``````
+git clone https://github.com/St-Hades/tpWeb_1.git
+``````
 
 ## Utilisation :
 
