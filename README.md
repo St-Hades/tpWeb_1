@@ -25,6 +25,7 @@ Ouvrir le fichier ```index.html``` dans un navigateur web.
 
 ## Auteurs :
 
-- [Lucas Leprévost](St-Hades)
-- [Enzo Leroyer](enzoley)
+- [Lucas Leprévost](https://github.com/St-Hades)
+- [Enzo Leroyer](https://github.com/enzoley)
+
 
